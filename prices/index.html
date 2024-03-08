@@ -1,10 +1,87 @@
-<!DOCTYPE html><html lang="en" data-astro-cid-sckkx6r4> <head><meta charset="UTF-8"><meta name="description" content="Astro description"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"><meta name="generator" content="Astro v4.4.12"><title>Precios</title><style>:root{--pico-font-size: 100% }
-.icon-img{height:40px;margin-right:10px}div[data-astro-cid-ke3a23pu]{display:flex;gap:20px}
-</style><script type="module">const a=new URLSearchParams(window.location.search),c=parseInt(a.get("id")||"1"),o=a.get("alias");document.getElementById("item-image").setAttribute("src",`https://render.albiononline.com/v1/item/${o}.png`);let i=[];fetch(`https://west.albion-online-data.com/api/v2/stats/prices/${o}?locations=Caerleon,Bridgewatch,Fort Sterling,Martlock,Thetford,Lymhurst&qualities=${c}`).then(t=>t.json()).then(t=>{console.table(t),i=t,r()});const l=["sell_price_min","sell_price_max","buy_price_min","buy_price_max"];function r(){l.forEach(t=>{const s=document.getElementById(t);let n="";i.forEach(e=>n+=`
-          <tr>
-            <th scope="row"><img class="icon-img" src="https://render.albiononline.com/v1/item/T8_CAPEITEM_FW_${e.city=="Fort Sterling"?"FORTSTERLING":e.city.toUpperCase()}" alt="" />${e.city}</th>
-            <td>${e[t]}</td>
-            <td>${e[t+"_date"].split("T")[0]}</td>
-          </tr>
-        `),s.innerHTML=n})}
-</script></head> <body data-astro-cid-sckkx6r4>  <main class="container" data-astro-cid-ke3a23pu> <img id="item-image" src="" alt="" data-astro-cid-ke3a23pu> <h1 data-astro-cid-ke3a23pu>Órdenes de venta</h1> <div data-astro-cid-ke3a23pu> <article class="item" data-astro-cid-ke3a23pu> <h2 data-astro-cid-ke3a23pu>Precio Min.</h2> <table class="striped" data-astro-cid-ke3a23pu> <thead data-astro-cid-ke3a23pu> <tr data-astro-cid-ke3a23pu> <th scope="col" data-astro-cid-ke3a23pu>Ciudad</th> <th scope="col" data-astro-cid-ke3a23pu>Precio</th> <th scope="col" data-astro-cid-ke3a23pu>Fecha</th> </tr> </thead> <tbody id="sell_price_min" data-astro-cid-ke3a23pu></tbody> </table> </article> <article class="item" data-astro-cid-ke3a23pu> <h2 data-astro-cid-ke3a23pu>Precio Max.</h2> <table class="striped" data-astro-cid-ke3a23pu> <thead data-astro-cid-ke3a23pu> <tr data-astro-cid-ke3a23pu> <th scope="col" data-astro-cid-ke3a23pu>Ciudad</th> <th scope="col" data-astro-cid-ke3a23pu>Precio</th> <th scope="col" data-astro-cid-ke3a23pu>Fecha</th> </tr> </thead> <tbody id="sell_price_max" data-astro-cid-ke3a23pu></tbody> </table> </article> </div> <h1 data-astro-cid-ke3a23pu>Órdenes de compra</h1> <div data-astro-cid-ke3a23pu> <article class="item" data-astro-cid-ke3a23pu> <h2 data-astro-cid-ke3a23pu>Precio Min.</h2> <table class="striped" data-astro-cid-ke3a23pu> <thead data-astro-cid-ke3a23pu> <tr data-astro-cid-ke3a23pu> <th scope="col" data-astro-cid-ke3a23pu>Ciudad</th> <th scope="col" data-astro-cid-ke3a23pu>Precio</th> <th scope="col" data-astro-cid-ke3a23pu>Fecha</th> </tr> </thead> <tbody id="buy_price_min" data-astro-cid-ke3a23pu></tbody> </table> </article> <article class="item" data-astro-cid-ke3a23pu> <h2 data-astro-cid-ke3a23pu>Precio Max.</h2> <table class="striped" data-astro-cid-ke3a23pu> <thead data-astro-cid-ke3a23pu> <tr data-astro-cid-ke3a23pu> <th scope="col" data-astro-cid-ke3a23pu>Ciudad</th> <th scope="col" data-astro-cid-ke3a23pu>Precio</th> <th scope="col" data-astro-cid-ke3a23pu>Fecha</th> </tr> </thead> <tbody id="buy_price_max" data-astro-cid-ke3a23pu></tbody> </table> </article> </div> </main>  </body></html>   
+<!DOCTYPE html><html lang="en" data-astro-cid-sckkx6r4> <head><meta charset="UTF-8"><meta name="description" content="Astro description"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"><meta name="generator" content="Astro v4.4.12"><title>Precios</title><style>.icon-img{height:40px;margin-right:10px}div[data-astro-cid-ke3a23pu]{display:flex;flex-wrap:wrap;gap:20px}main[data-astro-cid-ke3a23pu]{padding-top:0}.price-button[data-astro-cid-ke3a23pu]:hover{cursor:pointer;filter:brightness(1.5)}
+div[data-astro-cid-5blmo7yk]{position:sticky;top:0;background-color:#13171f;z-index:999}:root{--pico-font-size: 100% }
+</style></head> <body data-astro-cid-sckkx6r4> <div data-astro-cid-5blmo7yk> <nav class="container" data-astro-cid-5blmo7yk> <ul data-astro-cid-5blmo7yk> <li data-astro-cid-5blmo7yk><strong data-astro-cid-5blmo7yk>Albion Market Prices</strong></li> </ul> <ul data-astro-cid-5blmo7yk> <li data-astro-cid-5blmo7yk><a href="/" data-astro-cid-5blmo7yk>Home</a></li> </ul> </nav> </div>   <main class="container" data-astro-cid-ke3a23pu> <img id="item-image" src="" alt="" data-astro-cid-ke3a23pu> <h1 data-astro-cid-ke3a23pu>Órdenes de venta</h1> <div data-astro-cid-ke3a23pu> <article class="item" data-astro-cid-ke3a23pu> <h2 data-astro-cid-ke3a23pu>Precio Min.</h2> <table class="striped" data-astro-cid-ke3a23pu> <thead data-astro-cid-ke3a23pu> <tr data-astro-cid-ke3a23pu> <th scope="col" data-astro-cid-ke3a23pu>Ciudad</th> <th scope="col" class="price-button" data-astro-cid-ke3a23pu>Precio <img class="price-arrow" src="/arrowup.svg" alt="" data-astro-cid-ke3a23pu></th> <th scope="col" data-astro-cid-ke3a23pu>Fecha</th> </tr> </thead> <tbody id="sell_price_min" data-astro-cid-ke3a23pu></tbody> </table> </article> <article class="item" data-astro-cid-ke3a23pu> <h2 data-astro-cid-ke3a23pu>Precio Max.</h2> <table class="striped" data-astro-cid-ke3a23pu> <thead data-astro-cid-ke3a23pu> <tr data-astro-cid-ke3a23pu> <th scope="col" data-astro-cid-ke3a23pu>Ciudad</th> <th scope="col" class="price-button" data-astro-cid-ke3a23pu>Precio <img class="price-arrow" src="/arrowup.svg" alt="" data-astro-cid-ke3a23pu></th> <th scope="col" data-astro-cid-ke3a23pu>Fecha</th> </tr> </thead> <tbody id="sell_price_max" data-astro-cid-ke3a23pu></tbody> </table> </article> </div> <h1 data-astro-cid-ke3a23pu>Órdenes de compra</h1> <div data-astro-cid-ke3a23pu> <article class="item" data-astro-cid-ke3a23pu> <h2 data-astro-cid-ke3a23pu>Precio Min.</h2> <table class="striped" data-astro-cid-ke3a23pu> <thead data-astro-cid-ke3a23pu> <tr data-astro-cid-ke3a23pu> <th scope="col" data-astro-cid-ke3a23pu>Ciudad</th> <th scope="col" class="price-button" data-astro-cid-ke3a23pu>Precio <img class="price-arrow" src="/arrowup.svg" alt="" data-astro-cid-ke3a23pu></th> <th scope="col" data-astro-cid-ke3a23pu>Fecha</th> </tr> </thead> <tbody id="buy_price_min" data-astro-cid-ke3a23pu></tbody> </table> </article> <article class="item" data-astro-cid-ke3a23pu> <h2 data-astro-cid-ke3a23pu>Precio Max.</h2> <table class="striped" data-astro-cid-ke3a23pu> <thead data-astro-cid-ke3a23pu> <tr data-astro-cid-ke3a23pu> <th scope="col" data-astro-cid-ke3a23pu>Ciudad</th> <th scope="col" class="price-button" data-astro-cid-ke3a23pu>Precio <img class="price-arrow" src="/arrowup.svg" alt="" data-astro-cid-ke3a23pu></th> <th scope="col" data-astro-cid-ke3a23pu>Fecha</th> </tr> </thead> <tbody id="buy_price_max" data-astro-cid-ke3a23pu></tbody> </table> </article> </div> <!-- Footnote --> <span data-astro-cid-ke3a23pu><strong data-astro-cid-ke3a23pu>*</strong> Datos de las últimas 24 horas.</span> </main>  </body></html> <script lang="js">
+  const params = new URLSearchParams(window.location.search);
+
+  const quality = parseInt(params.get('quality') || '1');
+  const alias = params.get('alias');
+
+  let tablesInfo;
+
+  document
+    .getElementById('item-image')
+    .setAttribute('src', `https://render.albiononline.com/v1/item/${alias}.png`);
+
+  fetch(
+    `https://west.albion-online-data.com/api/v2/stats/prices/${alias}?locations=Caerleon,Bridgewatch,Fort Sterling,Martlock,Thetford,Lymhurst&qualities=${quality}`
+  )
+    .then((res) => res.json())
+    .then((res) => {
+      tablesInfo = divideTablesInfo(res);
+      setTables();
+    });
+
+  const tableNames = [
+    'sell_price_min',
+    'sell_price_max',
+    'buy_price_min',
+    'buy_price_max',
+  ];
+
+  let orderBy = 'price-asc';
+
+  function divideTablesInfo(items) {
+    const info = {};
+
+    tableNames.forEach((tableName) => {
+      info[tableName] = items.map((item) => ({
+        city: item.city,
+        price: item[tableName],
+        date: item[tableName + '_date'],
+      }));
+    });
+
+    return info;
+  }
+
+  function setTables() {
+    Object.entries(tablesInfo).forEach(([key, value]) => {
+      const table = document.getElementById(key);
+
+      if (orderBy == 'price-asc') value.sort((a, b) => a.price - b.price);
+      else if (orderBy == 'price-desc') value.sort((a, b) => b.price - a.price);
+
+      table.innerHTML = value.reduce((prev, curr) => {
+        const [date, hour] = curr.date.split('T');
+        return (
+          prev +
+          `<tr>
+             <th scope="row"><img class="icon-img" src="https://render.albiononline.com/v1/item/T8_CAPEITEM_FW_${curr.city == 'Fort Sterling' ? 'FORTSTERLING' : curr.city.toUpperCase()}" alt="" />${curr.city}</th>
+             <td>${curr.price || '-'}</td>
+             <td>${date == '0001-01-01' ? '-' : date + ', ' + hour.slice(0, 5)}</td>
+          </tr>`
+        );
+      }, '');
+    });
+  }
+
+  function changeOrder(newValue) {
+    orderBy = newValue;
+    setTables();
+  }
+
+  const priceButtons = Array.from(document.getElementsByClassName('price-button'));
+  const priceArrow = Array.from(document.getElementsByClassName('price-arrow'));
+
+  priceButtons.forEach((element) =>
+    element.addEventListener('click', () => {
+      if (orderBy == 'price-desc') {
+        changeOrder('price-asc');
+        priceArrow.forEach((item) => (item.src = '/arrowup.svg'));
+      } else if (orderBy == 'price-asc') {
+        changeOrder('price-desc');
+        priceArrow.forEach((item) => (item.src = '/arrowdown.svg'));
+      }
+    })
+  );
+</script>  
